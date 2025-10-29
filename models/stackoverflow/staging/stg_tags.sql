@@ -1,2 +1,2 @@
 SELECT * 
-FROM bigquery-public-data.stackoverflow.tags
+FROM {{ source('stackoverflow', 'tags') }} 

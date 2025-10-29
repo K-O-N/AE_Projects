@@ -1,4 +1,4 @@
 
 
 SELECT * 
-FROM bigquery-public-data.stackoverflow.comments
+FROM {{ source('stackoverflow', 'comments') }} 

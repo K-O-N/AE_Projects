@@ -1,2 +1,2 @@
 SELECT * 
-FROM bigquery-public-data.stackoverflow.votes
+FROM {{ source('stackoverflow', 'votes') }} 

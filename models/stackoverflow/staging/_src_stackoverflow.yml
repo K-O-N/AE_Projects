@@ -1,0 +1,13 @@
+sources:
+  - name: stackoverflow
+    database: bigquery-public-data
+    schema: stackoverflow
+    tables:
+      - name: badges
+      - name: users
+      - name: comments
+      - name: votes
+      - name: tags
+      - name: post_history
+      - name: posts_answers
+          

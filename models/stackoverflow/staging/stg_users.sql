@@ -14,4 +14,4 @@ SELECT id as user_id,
        down_votes,
        views
        
-FROM bigquery-public-data.stackoverflow.users
+FROM {{ source('stackoverflow', 'users') }} 

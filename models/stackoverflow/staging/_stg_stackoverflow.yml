@@ -5,6 +5,12 @@ models:
        data_tests:
         - unique
         - not_null 
+     - name: tag_based
+       data_tests:
+        - accepted_values:
+            values:
+              - false
+              - true
   - name: stg_comments
   - name: stg_post_history
   - name: stg_posts_answers

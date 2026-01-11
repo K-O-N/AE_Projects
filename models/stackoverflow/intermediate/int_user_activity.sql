@@ -1,4 +1,4 @@
-select id as user_id,
+select user_id,
        display_name,
        creation_date,
        location,

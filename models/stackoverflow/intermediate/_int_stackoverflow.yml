@@ -38,4 +38,3 @@ models:
 
   - name: int_post_activity
     description: ""
-    columns:

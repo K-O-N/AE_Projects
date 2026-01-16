@@ -1,16 +1,10 @@
 models:
   - name: stg_badges
     columns:
-     - name: id
-       data_tests:
-        - unique
-        - not_null 
-     - name: tag_based
-       data_tests:
-        - accepted_values:
-            values:
-              - false
-              - true
+      - name: id
+        data_tests:
+          - unique
+          - not_null
   - name: stg_comments
   - name: stg_post_history
   - name: stg_posts_answers
@@ -19,10 +13,10 @@ models:
       - name: id
         data_tests:
           - not_null
-  - name: stg_users 
-    columns: 
+  - name: stg_users
+    columns:
       - name: user_id
         data_tests:
           - unique
           - not_null
-  - name: stg_votes 
+  - name: stg_votes

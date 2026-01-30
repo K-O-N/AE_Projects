@@ -7,6 +7,8 @@
 - SQL-based transformations
 - Analytics engineering principles
 - Modular, scalable project structure
+- Macros
+- Quality Assurance
 
 ## Project 1: Stackoverflow 
 

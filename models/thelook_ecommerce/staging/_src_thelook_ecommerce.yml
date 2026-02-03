@@ -1,6 +1,7 @@
 sources:
   - name: ecomm
-    database: bbigquery-public-data
+    description: bigquery dataset for thelook ecommerce
+    database: bigquery-public-data
     schema: thelook_ecommerce
     tables:
       - name: users

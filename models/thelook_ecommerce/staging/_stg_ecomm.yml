@@ -1,10 +1,59 @@
+version: 2
+
 models:
   - name: stg_ecomm__order_items
+    description: "staging model for order items"
     columns:
+      - name: id
+        description: "primary key "
+        tests:
+          - unique
+          - not_null
+
       - name: order_id
+        description: "order id for items"
+
+      - name: user_id
+        description: "user id"
+
+      - name: product_id
+        description: "product id"
+
+      - name: order_status
+        description: "status of our orders"
+
+  - name: stg_ecomm__products
+    description: "staging model for products"
+    columns:
+      - name: product_id
+        description: "product order id"
+        tests:
+          - unique
+          - not_null
+
   - name: stg_ecomm__users
+    description: "staging model for users"
     columns:
       - name: user_id
-  - name: stg_ecomm__products
-    columns:
-      - name: product_name
+        description: " users id"
+        tests:
+          - unique
+          - not_null
+
+      - name: email
+        description: "users email"
+
+      - name: age
+        description: "users age"
+
+      - name: gender
+        description: "gender of customers"
+        tests:
+          - accepted_values:
+              values: ["M", "F"]
+
+      - name: traffic_source
+        description: "The source of our users acquisition"
+        tests:
+          - accepted_values:
+              values: ["Search", "Organic", "Email", "Facebook", "Display"]

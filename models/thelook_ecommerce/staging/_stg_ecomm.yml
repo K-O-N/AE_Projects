@@ -1,0 +1,10 @@
+models:
+  - name: stg_ecomm__order_items
+    columns:
+      - name: order_id
+  - name: stg_ecomm__users
+    columns:
+      - name: user_id
+  - name: stg_ecomm__products
+    columns:
+      - name: product_name

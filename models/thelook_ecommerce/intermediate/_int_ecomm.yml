@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: int_order_items_enriched
+    description: "Enriched order item dataset combining users and products"
+    columns:
+      - name: user_id
+        tests:
+          - relationships:
+              to: ref('stg_ecomm__users')
+              field: user_id
+
+      - name: product_id
+        tests:
+          - relationships:
+              to: ref('stg_ecomm__products')
+              field: product_id
+
+      - name: gross_margin
+        tests:
+          - not_null
+
+
+  - name: int_orders_aggregated
+    description: "Order-level aggregated metrics"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+
+      - name: order_revenue
+        tests:
+          - not_null
+          

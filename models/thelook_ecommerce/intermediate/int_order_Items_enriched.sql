@@ -15,6 +15,9 @@ select
     oi.product_id,
     oi.order_status,
     oi.created_at,
+    oi.shipped_at,
+    oi.delivered_at,
+    oi.returned_at,
     oi.sale_price,
 
     su.country,

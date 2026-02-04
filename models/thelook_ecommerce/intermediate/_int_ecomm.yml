@@ -32,4 +32,13 @@ models:
       - name: order_revenue
         tests:
           - not_null
+
+  - name: int_users_purchase
+    description: "Users order history"
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          
+
           

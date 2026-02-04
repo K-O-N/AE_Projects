@@ -1,0 +1,9 @@
+sources:
+  - name: ecomm
+    description: bigquery dataset for thelook ecommerce
+    database: bigquery-public-data
+    schema: thelook_ecommerce
+    tables:
+      - name: users
+      - name: products
+      - name: order_items

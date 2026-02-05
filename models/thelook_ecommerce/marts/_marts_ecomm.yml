@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: int_order_items_dim_productsenriched
+    description: "Dimensions table for products"
+
+  - name: dim_users
+    description: "Dimensions table for users"
+
+
+  - name: fact_orders
+    description: "Granularity level per order, facts table for orders"
+
+
+          

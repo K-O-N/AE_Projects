@@ -27,7 +27,6 @@ The project follows a layered dbt architecture from **staging → intermediate �
 
 ## Project Structure
 
-
 ```text
 models/
 ├── staging/

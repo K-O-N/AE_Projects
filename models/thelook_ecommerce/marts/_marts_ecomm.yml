@@ -10,6 +10,12 @@ models:
 
   - name: fact_orders
     description: "Granularity level per order, facts table for orders"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          
+          
 
 
           

@@ -122,6 +122,7 @@ dbt test test_type:singular
 dbt test --select order_revenue_non_negative
 ```
 ## Macros
+Macros are defined in the path [models-macros], a few macros were used to enhance the project and models performance
 
 
 ## Materilisation

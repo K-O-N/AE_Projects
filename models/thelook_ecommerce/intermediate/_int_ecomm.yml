@@ -7,12 +7,14 @@ models:
       - name: user_id
         tests:
           - relationships:
+              arguments: 
               to: ref('stg_ecomm__users')
               field: user_id
 
       - name: product_id
         tests:
           - relationships:
+              arguments: 
               to: ref('stg_ecomm__products')
               field: product_id
 
@@ -32,6 +34,7 @@ models:
       - name: order_revenue
         tests:
           - not_null
+          - order_revenue_non_negative
 
   - name: int_users_purchase
     description: "Users order history"

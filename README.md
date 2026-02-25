@@ -116,7 +116,8 @@ Defined in YAML files and applied to models and columns:
 * `relationships`
 
 - Singular test:
-- A singular test was applied to the total revunue metric to ensure no revenue is less than 0. This test can be found in the test folder of this project. To run any of the test here, you can use any of the functions below 
+- A singular test was applied to the total revunue metric to ensure no revenue is less than 0. This test can be found in the test folder of this project. To run any of the test here, you can use any of the functions below
+  
 ```
 dbt test test_type:singular
 dbt test --select order_revenue_non_negative

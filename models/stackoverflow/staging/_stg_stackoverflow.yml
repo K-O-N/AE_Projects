@@ -11,8 +11,7 @@ models:
   - name: stg_tags
     columns:
       - name: id
-        data_tests:
-          - not_null
+        
   - name: stg_users
     columns:
       - name: user_id

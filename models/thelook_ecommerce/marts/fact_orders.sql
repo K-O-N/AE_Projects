@@ -38,7 +38,7 @@ select * from final
 
 {% if is_incremental() %}
     -- this filter will only be applied on an incremental run
-    where created_at >= (select dateadd('day', -3, max(created_at)) from {{ this }}) 
+    where created_at >= (select date_add('day', -3, max(created_at)) from {{ this }}) 
 {% endif %}
 
 order by created_at desc

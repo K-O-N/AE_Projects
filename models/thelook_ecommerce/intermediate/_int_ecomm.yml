@@ -34,6 +34,11 @@ models:
       - name: order_revenue
         tests:
           - not_null
+          - order_revenue_non_negative  
+
+      - name: order_margin 
+        tests: 
+         - order_revenue_non_negative
 
 
   - name: int_users_purchase

@@ -19,5 +19,5 @@ select id as user_id,
         latitude,
         longitude,
         traffic_source,
-        FORMAT_DATETIME('%Y-%m-%d %H:%M:%S', DATETIME(TIMESTAMP(created_at))) as created_at
+        cast(created_at as timestamp) as created_at
 from user_stg

@@ -3,24 +3,50 @@ version: 2
 models:
   - name: stg_ecomm__order_items
     description: "staging model for order items"
+    config: 
+      contract: 
+        enforced: true 
     columns:
       - name: id
         description: "primary key "
+        data_type: integer
         tests:
           - unique
           - not_null
 
       - name: order_id
         description: "order id for items"
+        data_type: integer
 
       - name: user_id
         description: "user id"
+        data_type: integer
 
       - name: product_id
         description: "product id"
+        data_type: integer
 
       - name: order_status
         description: "status of our orders"
+        data_type: string
+
+      - name: inventory_item_id
+        data_type: integer
+
+      - name: created_at
+        data_type: timestamp
+
+      - name: shipped_at
+        data_type: timestamp
+      
+      - name: delivered_at
+        data_type: timestamp
+
+      - name: returned_at
+        data_type: timestamp
+
+      - name: sale_price 
+        data_type: float
 
   - name: stg_ecomm__products
     description: "staging model for products"

@@ -7,7 +7,7 @@
 - Analytics engineering principles
 - Modular, scalable project structure
 - Materialisation
-- Macros
+- Macros, Packages, Snapshots
 - Quality Assurance
 
 ## Project 1: Stackoverflow 
@@ -60,18 +60,16 @@ models/
 
 #### Staging Layer: 
 
-* Cleans and standardises raw source tables
+* One to one with source tables(3 sources), cleans and standardises raw source tables
 * Renames columns to be analytics-friendly
 * Applies basic type casting and formatting
 * No business logic applied
 
 **Staging Models:**
 
-* `stg_ecomm__orders`
+* `stg_ecomm__users`
 * `stg_ecomm__order_items`
 * `stg_ecomm__products`
-* `stg_users`
-
 
 #### Intermediate Layer
 
@@ -103,8 +101,11 @@ models/
 * `dim_users`
 * `dim_products`
 
+## Snapshot: 
+* `order_status_snapshots`: implemented to track the changes on orders table. Using SCD Type II provided by dbt 
+
 ## Testing 
-Testing is a first-class citizen in this project. To ensure the data models are in the best format for downstream end users, both generic and singular tests are implemented to ensure data integrity.
+Data quality is a major part of this project, to ensure the data models are in the best format for downstream end users, both generic and singular tests are implemented to ensure data integrity.
 
 - Generic Tests
 Defined in YAML files and applied to models and columns:
@@ -113,6 +114,7 @@ Defined in YAML files and applied to models and columns:
 * `unique`
 * `accepted_values`
 * `relationships`
+* `order_revenue_non_negative`: created a custom-generic test using jinja. 
 
 - Singular test:
 - A singular test was applied to the total revunue metric to ensure no revenue is less than 0. This test can be found in the test folder of this project. To run any of the test here, you can use any of the functions below
@@ -121,13 +123,14 @@ Defined in YAML files and applied to models and columns:
 dbt test test_type:singular
 dbt test --select order_revenue_non_negative
 ```
-## Macros
+## Macros & Packages Utilised
 Macros are defined in the path [models-macros], a few macros were used to enhance the project and models performance
-
+- codegen: generate_model_yaml
+- -utils: generate_surrogate_key
 
 ## Materilisation
 The models in these projects are materilised as follows
 - View: All staging models arematerilisated as view
-- Intermediate and Marts: These are materilised as tables in the data warehouse. 
+- Table: All Marts are materilised as tables in the data warehouse
 
 ## Overview Project: Stackoverflow
